@@ -1,0 +1,76 @@
+/* =============================================================================
+   HistoryList Styles — Scrollable panel showing picked ball history.
+   ============================================================================= */
+
+/* Fixed panel (top-left corner) */
+.panel {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 16px;
+  padding: 16px 20px;
+  min-width: 140px;
+  max-width: 200px;
+  max-height: 60vh;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar */
+.panel::-webkit-scrollbar { width: 4px; }
+.panel::-webkit-scrollbar-track { background: transparent; }
+.panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+/* Section title */
+.title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* Single history entry row */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+/* Pick sequence number (e.g. "1.") */
+.index {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 400;
+  min-width: 20px;
+}
+
+/* Ball number (colored) */
+.num {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* Empty state */
+.empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-style: italic;
+}
