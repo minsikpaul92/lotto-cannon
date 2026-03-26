@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti'
 import LottoMachine from './LottoMachine'
 import Cannon from './Cannon'
 import HistoryList from './HistoryList'
+import cannonLogo from './Cannon.svg'
 
 function fireConfetti() {
   const duration = 2200
@@ -192,11 +193,11 @@ export default function PlayScreen({ totalN, getBallColor, onExit }) {
             animate={phase === 'mixing' ? { scale: [1, 1.03, 1] } : { scale: 1 }}
             transition={{ repeat: Infinity, duration: 0.5 }}
           >
-            {phase === 'mixing' ? '🌀 Mixing...' :
-             phase === 'dropping' ? '⬇️ Loading...' :
-             phase === 'firing' ? '💥 Firing!' :
-             phase === 'flying' ? '🚀 Incoming!' :
-             '🎯 Launch!'}
+            {phase === 'mixing' ? <><img src={cannonLogo} alt="" style={{ width: 20, height: 20 }} /> Mixing...</> :
+             phase === 'dropping' ? <><img src={cannonLogo} alt="" style={{ width: 20, height: 20 }} /> Loading...</> :
+             phase === 'firing' ? <><img src={cannonLogo} alt="" style={{ width: 20, height: 20 }} /> Firing!</> :
+             phase === 'flying' ? <><img src={cannonLogo} alt="" style={{ width: 20, height: 20 }} /> Incoming!</> :
+             <><img src={cannonLogo} alt="" style={{ width: 20, height: 20 }} /> Launch!</>}
           </motion.button>
         )}
       </div>
