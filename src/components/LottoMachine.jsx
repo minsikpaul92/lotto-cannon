@@ -203,13 +203,13 @@ export default function LottoMachine({ balls, getBallColor, isMixing, outletBall
         }
       }
 
-      // Draw outlet at the bottom of the sphere — sized to match ball diameter (ballR=18 → diameter=36)
+      // Draw outlet at the bottom of the sphere
       ctx.save()
       ctx.beginPath()
-      ctx.ellipse(CENTER_X, CENTER_X + SPHERE_R - 2, 19, 19, 0, 0, Math.PI * 2)
-      ctx.fillStyle = 'rgba(0,0,0,0.45)'
+      ctx.ellipse(CENTER_X, 316, 22, 6, 0, 0, Math.PI * 2)
+      ctx.fillStyle = 'rgba(0,0,0,0.6)'
       ctx.fill()
-      ctx.strokeStyle = 'rgba(255,255,255,0.2)'
+      ctx.strokeStyle = 'rgba(255,255,255,0.3)'
       ctx.lineWidth = 1.5
       ctx.stroke()
       ctx.restore()
@@ -229,16 +229,17 @@ export default function LottoMachine({ balls, getBallColor, isMixing, outletBall
       </div>
       <div className="sphere-container">
         <svg className="sphere-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="160" cy="160" r="150" stroke="rgba(255,255,255,0.28)" strokeWidth="2" fill="none"/>
-          <circle cx="160" cy="160" r="150" fill="rgba(255,255,255,0.04)"/>
-          <path d="M 80 80 Q 160 40 240 80" stroke="rgba(255,255,255,0.5)" strokeWidth="3" fill="none" strokeLinecap="round"/>
-          <path d="M 100 65 Q 140 50 180 65" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-          <circle cx="160" cy="160" r="148" stroke="rgba(0,0,0,0.2)" strokeWidth="2" fill="none"/>
-          {/* Outlet opening at bottom — diameter matches ball size (ballR=18 → diameter=36) */}
-          <ellipse cx="160" cy="308" rx="19" ry="10" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
-          {/* Tube going down from outlet */}
-          <rect x="141" y="308" width="38" height="28" fill="rgba(0,0,0,0.4)" rx="4"/>
-          <rect x="143" y="308" width="34" height="28" fill="rgba(255,255,255,0.04)" rx="3"/>
+          <circle cx="160" cy="160" r="150" stroke="rgba(255,255,255,0.28)" strokeWidth="2" fill="none" />
+          <circle cx="160" cy="160" r="150" fill="rgba(255,255,255,0.04)" />
+          <path d="M 80 80 Q 160 40 240 80" stroke="rgba(255,255,255,0.5)" strokeWidth="3" fill="none" strokeLinecap="round" />
+          <path d="M 100 65 Q 140 50 180 65" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          <circle cx="160" cy="160" r="148" stroke="rgba(0,0,0,0.2)" strokeWidth="2" fill="none" />
+          {/* Glass Funnel Outlet */}
+          <path d="M 110 301 Q 138 316 138 316 L 182 316 Q 182 316 210 301" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="2" />
+          <ellipse cx="160" cy="316" rx="22" ry="6" fill="rgba(0,0,0,0.6)" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+          {/* Tube going down from funnel */}
+          <rect x="138" y="316" width="44" height="20" fill="rgba(0,0,0,0.3)" />
+          <rect x="140" y="316" width="40" height="20" fill="rgba(255,255,255,0.05)" />
         </svg>
 
         <canvas ref={canvasRef} className="sphere-canvas" style={{ borderRadius: '50%' }} />
