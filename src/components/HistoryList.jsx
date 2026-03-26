@@ -7,8 +7,7 @@ export default function HistoryList({ history, getBallColor }) {
       {history.length === 0 ? (
         <div className="history-empty">No picks yet</div>
       ) : (
-        [...history].reverse().map((num, revIdx) => {
-          const idx = history.length - 1 - revIdx
+        history.map((num, idx) => {
           return (
             <motion.div
               key={num}
